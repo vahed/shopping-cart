@@ -12,7 +12,7 @@
             <div class="carousel-inner relative overflow-hidden w-full">
                 <div v-for="(img, i) in images" :id="`slide-${i}`" :key="i" :class="`${active === i ? 'active' : 'left-full'}`" class="carousel-item inset-0 relative w-full transform transition-all duration-500 ease-in-out">
                     <div class="relative w-full">
-                        <img class="carousel-height block w-full" :src="img.image" alt="First slide" />
+                        <img class="first-image carousel-height block w-full" :src="img.image" alt="First slide" />
                         <div class="absolute bottom-0 left-0 right-0 px-4 py-2 bg-gray-800 opacity-70">
                             <h3 class="text-xl text-white font-bold text-center">
                                 {{ img.header }}
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style scoped>
-.left-full {
+.first-image {
     left: -100%;
 }
 .carousel-height {

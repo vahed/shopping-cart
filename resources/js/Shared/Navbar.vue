@@ -3,27 +3,27 @@
         <nav class="bg-yellow-50">
             <div class="mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-between">
-                        <!-- sidebar categories-->
-                        <Categories />
+                    <!-- sidebar categories-->
+                    <Categories />
 
-                        <!-- Primary Navbar items -->
-                        <div class="hidden md:flex items-center space-x-1">
-                            <NavLink :href="route('home.index')" :active="$page.component === 'Welcome'">Home</NavLink>
-                            <NavLink :href="route('products.index')" :active="$page.component === 'Products/Product'">Products</NavLink>
-                            <NavLink :href="route('home.index')" >About</NavLink>
-                            <NavLink :href="route('products.index')">Contact Us</NavLink>
-                            <Link :href="route('cart.index')" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-600 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
-                                <div class="relative">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                                    </svg>
-                                    <div v-if="($page.props.cartCount > 0)" class="ml-5 absolute bottom-3 bg-amber-400 rounded-full">
-                                        <span class="px-1">{{ $page.props.cartCount }}</span>
-                                    </div>
+                    <!-- Primary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <NavLink :href="route('home.index')" :active="$page.component === 'Welcome'">خانه</NavLink>
+                        <NavLink :href="route('products.index')" :active="$page.component === 'Products/Product'">محصولات</NavLink>
+                        <NavLink :href="route('home.index')" >درباره پاپیون</NavLink>
+                        <NavLink :href="route('products.index')">تماس با ما</NavLink>
+                        <Link :href="route('cart.index')" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-600 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                            <div class="relative">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                                </svg>
+                                <div v-if="($page.props.cartCount > 0)" class="ml-5 absolute bottom-3 bg-amber-400 rounded-full">
+                                    <span class="px-1">{{ $page.props.cartCount }}</span>
                                 </div>
+                            </div>
 
-                            </Link>
-                        </div>
+                        </Link>
+                    </div>
 
                     <!-- Secondary Navbar items -->
                     <div class="hidden md:flex items-center space-x-3">
@@ -31,7 +31,7 @@
                             <NavLink :href="route('admin_dashboard')">Dashboard</NavLink>
                         </div>
                         <div v-if="$page.props.auth.role === 'admin'">
-                            <NavLink :href="route('logout')" method="post" as="button">Logout</NavLink>
+                            <NavLink :href="route('logout')" method="post" as="button">خروج</NavLink>
                         </div>
                         <div v-if="$page.props.auth.user">
                             <NavLink v-if="$page.props.auth.user.role === 'user'" :active="$page.component === 'Auth/Login'" :href="route('logout')"
@@ -50,8 +50,8 @@
                             </NavLink>
                         </div>
                         <template v-if="!$page.props.auth.user">
-                            <NavLink :href="route('login')" :active="$page.component === 'Auth/Login'">Login</NavLink>
-                            <NavLink :href="route('register')" :active="$page.component === 'Auth/Register'">Register</NavLink>
+                            <NavLink :href="route('login')" :active="$page.component === 'Auth/Login'">ورود</NavLink>
+                            <NavLink :href="route('register')" :active="$page.component === 'Auth/Register'">ثبت نام</NavLink>
                         </template>
                     </div>
                     <!-- Mobile menu button -->
@@ -80,31 +80,31 @@
                         >
                             <path d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
-                    </button>
+                        </button>
                     </div>
                 </div>
             </div>
             <!-- mobile menu -->
             <div class="hidden mobile-menu">
                 <ul class="">
-                    <MobileNavLink :href="route('home.index')" :active="$page.component === 'Welcome'">Home</MobileNavLink>
-                    <MobileNavLink :href="route('products.index')" :active="$page.component === 'Products/Product'">Products</MobileNavLink>
+                    <MobileNavLink :href="route('home.index')" :active="$page.component === 'Welcome'">خانه</MobileNavLink>
+                    <MobileNavLink :href="route('products.index')" :active="$page.component === 'Products/Product'">محصولات</MobileNavLink>
                     <MobileNavLink :href="route('products.index')" >About</MobileNavLink>
                     <MobileNavLink :href="route('products.index')" >Contact Us</MobileNavLink>
 
                     <div v-if="!$page.props.auth.user">
-                        <MobileNavLink :href="route('login')" :active="$page.component === 'Auth/Login'">Login</MobileNavLink>
-                        <MobileNavLink :href="route('register')" :active="$page.component === 'Auth/Register'">Register</MobileNavLink>
+                        <MobileNavLink :href="route('login')" :active="$page.component === 'Auth/Login'">ورود</MobileNavLink>
+                        <MobileNavLink :href="route('register')" :active="$page.component === 'Auth/Register'">ثبت نام</MobileNavLink>
                     </div>
 
                     <div v-if="$page.props.auth.role === 'admin'">
                         <MobileNavLink :href="route('admin_dashboard')" method="get" as="button">Dashboard</MobileNavLink>
-                        <MobileNavLink :href="route('logout')" method="post" as="button">Logout</MobileNavLink>
+                        <MobileNavLink :href="route('logout')" method="post" as="button">خروج</MobileNavLink>
                     </div>
 
                     <div v-if="$page.props.auth.user">
                         <MobileNavLink v-if="$page.props.auth.user.role === 'user'" :active="$page.component === 'Auth/Login'" :href="route('logout')" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-yellow-500 hover:text-white transition duration-300" method="post" as="button">
-                            Log Out
+                            خروج
                         </MobileNavLink>
                     </div>
                 </ul>

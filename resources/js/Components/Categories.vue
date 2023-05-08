@@ -2,15 +2,10 @@
     <div class="flex">
         <a href="#" class="flex items-center py-4 px-2">
             <div class="font-semibold text-gray-500 text-lg trigger font-semibold hover:text-yellow-500 transition duration-300" @click="toggle">
-                <span class="flex">
-                    <span class="flex-1 m-1">
-                        <i class="fa fa-bars float-right" aria-hidden="true"></i>
-                    </span>
-                    <span class="flex-1">Categories</span>
-                </span>
+                <i class="fa fa-bars float-left" aria-hidden="true"><span class="m-1">دسته‌بندی کالاها</span></i>
             </div>
             <div class="menu">
-                <div class="closeButton" @click="toggle()">&times;</div>
+                <div class="closeButton" @click="closeMenu">&times;</div>
                 <Category :categoryItems = "$page.props.categoryItems"/>
             </div>
         </a>
@@ -33,20 +28,13 @@ export default {
     },
     methods: {
 
-        toggleMenu() {
-
-            const menu = document.querySelector(".mobile-menu")
-            menu.classList.toggle("hidden")
-
-        },
         toggle() {
-            const overlay = document.getElementById('overlay')
-            this.expanded = !this.expanded;
-
-            const menu = document.querySelector('.menu');
-            const trigger = document.querySelector('.trigger');
-            menu.classList.toggle('menu--open');
-
+            const element = document.querySelector('.menu');
+            element.style.marginRight = '0px'
+        },
+        closeMenu() {
+            const element = document.querySelector('.menu');
+            element.style.marginRight = '-320px'
         }
     }
 }

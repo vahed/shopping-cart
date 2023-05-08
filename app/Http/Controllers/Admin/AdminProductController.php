@@ -54,7 +54,7 @@ class AdminProductController extends Controller
 
         foreach( $existingProduct as $prod){
             if($prod->name == $request->productName) {
-                return redirect()->back()->with('error', 'This product name already exists.');
+                return redirect()->back()->with('error', 'این محصول در بانک دادها موجود است۰');
             }
         }
 
@@ -68,27 +68,7 @@ class AdminProductController extends Controller
             ]
         );
 
-//        $productFeature = ProductFeature::create(
-//            [
-//                'product_id' => $product->id,
-//                'price' => $validated["productPrice"],
-//                'quantity' => 123,
-//                'color'=> $validated["productColor"],
-//                'size' => $validated["productSize"],
-//                'description' => $validated["productDescription"],
-//                'discount' => $validated["productDiscount"],
-//                'in_stock' => $validated["productInstock"]
-//            ]
-//        );
-//
-//        Image::create(
-//            [
-//                'product_feature_id' => $productFeature->product_feature_id,
-//                'image_url' => $productFeature->image_url
-//            ]
-//        );
-
-        return redirect()->back()->with('success', 'New product added to the database');
+        return redirect()->back()->with('success', 'محصول به بانک دادها افزوده شد۰');
     }
 
     /**

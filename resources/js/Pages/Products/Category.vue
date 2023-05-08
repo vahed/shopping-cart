@@ -3,7 +3,7 @@
 
             <div class="text-xl bg-yellow-600 text-white">
                 <div class="p-3">
-                    <i class="fa fa-list-alt float-left mt-1 mr-1" aria-hidden="true"></i>Category menu
+                    <i class="fa fa-list-alt float-right mt-1 ml-1" aria-hidden="true"></i>همه محصولات
                 </div>
             </div>
             <!-- pass item as prop to CatItem -->

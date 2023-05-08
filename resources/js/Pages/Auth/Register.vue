@@ -43,60 +43,60 @@ const submit = (url) => {
 
         <form @submit.prevent="submit(registerRequestUrl)">
             <div>
-                <InputLabel for="name" value="Name" />
+                <InputLabel for="name" value="نام و نام خا نوادگی" />
                 <TextInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus autocomplete="name" />
                 <InputError class="mt-2" :message="form.errors.name" />
             </div>
 
             <div>
-                <InputLabel for="address" value="Address" />
+                <InputLabel for="address" value="آدرس" />
                 <TextInput id="address" type="text" class="mt-1 block w-full" v-model="form.address" required autofocus autocomplete="address" />
                 <InputError class="mt-2" :message="form.errors.address" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="city" value="City" />
+                <InputLabel for="city" value="شهر" />
                 <TextInput id="city" type="text" class="mt-1 block w-full" v-model="form.city" required autocomplete="city" />
                 <InputError class="mt-2" :message="form.errors.city" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="county" value="County" />
+                <InputLabel for="county" value="استان" />
                 <TextInput id="county" type="text" class="mt-1 block w-full" v-model="form.county" required autocomplete="county" />
                 <InputError class="mt-2" :message="form.errors.county" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="postcode" value="Postcode" />
+                <InputLabel for="postcode" value="کد پستی" />
                 <TextInput id="postcode" type="text" class="mt-1 block w-full" v-model="form.postcode" required autocomplete="postcode" />
                 <InputError class="mt-2" :message="form.errors.postcode" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="email" value="Email" />
+                <InputLabel for="email" value="ایمیل" />
                 <TextInput id="email" type="text" class="mt-1 block w-full" v-model="form.email" required autocomplete="email" />
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+                <InputLabel for="password" value="رمز ورود" />
                 <TextInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="new-password" />
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+                <InputLabel for="password_confirmation" value="تایید رمز ورود" />
                 <TextInput id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <Link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    Already registered?
+                <Link :href="route('login')" class="ml-2 underline text-sm text-gray-600 hover:text-gray-900">
+                    آیا ثبت نام کرده اید؟
                 </Link>
 
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
+                <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    ثبت نام
                 </PrimaryButton>
             </div>
         </form>

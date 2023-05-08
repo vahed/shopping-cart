@@ -63,6 +63,7 @@ defineProps({
     <footer class="bg-gray-100">
         <Footer />
     </footer>
+
 </template>
 
 <script>

@@ -37,7 +37,7 @@ class AdminGetProductFeatureController extends Controller
         );
 
         return Inertia::render('Admin/CreateProductImage', [
-            'success' => 'New image added to the database'
+            'success' => 'تصویر به بانک دادها افزوده شد۰'
         ]);
 
     }

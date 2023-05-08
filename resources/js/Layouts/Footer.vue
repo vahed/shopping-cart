@@ -1,61 +1,48 @@
 <template>
     <div class="container mx-auto px-6 pt-10 pb-6">
         <div class="flex flex-wrap">
-            <div class="w-full md:w-1/4 text-center md:text-left">
-                <h5 class="uppercase mb-6 font-bold">Links</h5>
+            <div class="w-full md:w-1/3">
+                <h5 class="uppercase mb-6 font-bold">خدمات مشتریان</h5>
                 <ul class="mb-4">
                     <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">FAQ</a>
+                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500 text-right">پرسش های متداول</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Help</a>
+                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500 text-right">شرایط استفاده</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Support</a>
+                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500 text-right">پیگیریه سفارش</a>
                     </li>
                 </ul>
             </div>
-            <div class="w-full md:w-1/4 text-center md:text-left">
-                <h5 class="uppercase mb-6 font-bold">Legal</h5>
+            <div class="w-full md:w-1/3">
+                <h5 class="uppercase mb-6 font-bold">شرایط</h5>
                 <ul class="mb-4">
                     <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Terms</a>
+                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500 text-right">شرایط استفاده</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Privacy</a>
+                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500 text-right">حریم شخصی</a>
                     </li>
                 </ul>
             </div>
-            <div class="w-full md:w-1/4 text-center md:text-left">
-                <h5 class="uppercase mb-6 font-bold">Social</h5>
+            <div class="w-full md:w-1/3">
+                <h5 class="uppercase mb-6 font-bold">پرداخت</h5>
                 <ul class="mb-4">
                     <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Facebook</a>
+                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500 text-right">پرسش های متداول</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Linkedin</a>
+                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500 text-right">شیوه پرداخت</a>
                     </li>
                     <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Twitter</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="w-full md:w-1/4 text-center md:text-left">
-                <h5 class="uppercase mb-6 font-bold">Company</h5>
-                <ul class="mb-4">
-                    <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Official Blog</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">About Us</a>
-                    </li>
-                    <li class="mt-2">
-                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500">Contact</a>
+                        <a href="#" class="hover:underline text-gray-600 hover:text-orange-500 text-right">رویه بازگرداندن کالا</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+
 </template>
 
 <script>

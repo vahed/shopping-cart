@@ -29,7 +29,7 @@ class AdminBrandController extends Controller
 
             foreach( $brands as $brand){
                 if($brand->name == $request->brandName) {
-                    return redirect()->back()->with('error', 'This brand name already exists.');
+                    return redirect()->back()->with('error', 'این برند در بانک دادها موجود است۰');
                 }
             }
             Brand::create([
@@ -38,7 +38,7 @@ class AdminBrandController extends Controller
                 'size' => $request->brandSize
             ]);
 
-            return redirect()->back()->with('success', 'Brand has been created successfully.');
+            return redirect()->back()->with('success', 'برند به بانک دادها افزوده شد۰');
         }
     }
 

@@ -36,19 +36,18 @@ defineProps({
                             </div>
                         </div>
 
-                        <div class="text-center text-2xl mb-10">Create Product</div>
+                        <div class="text-center text-2xl mb-10">ایجاد محصول جدید</div>
                         <form class="w-full max-w-lg mx-auto" @submit.prevent="submit">
                             <div class="flex flex-wrap -mx-3 mb-6">
                                 <div class="w-full px-3">
                                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-productName">
-                                        Product Name
+                                        اسم محصول
                                     </label>
                                     <input class="appearance-none block w-full bg-gray-200 text-gray-700 border
                                                 border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none
                                                 focus:bg-white focus:border-gray-500"
                                            id="grid-password"
                                            type="text"
-                                           placeholder="Product name"
                                            v-model="form.productName"
                                     >
                                     <div v-if="errors.productName" class="text-red-500">{{ errors.productName }}</div>
@@ -57,13 +56,12 @@ defineProps({
                             <div class="flex flex-wrap -mx-3 mb-6">
                                 <div class="w-full px-3">
                                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-productName">
-                                        Product Code
+                                        کُد محصول
                                     </label>
                                     <input class="appearance-none block w-full bg-gray-200 text-gray-700 border
                                                 border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none
                                                 focus:bg-white focus:border-gray-500" id="grid-password"
                                            type="text"
-                                           placeholder="Product code"
                                            v-model="form.productCode"
                                     >
                                     <div v-if="errors.productCode" class="text-red-500">{{ errors.productCode }}</div>
@@ -72,7 +70,7 @@ defineProps({
                             <div class="flex flex-wrap -mx-3 mb-6">
                                 <div class="w-full px-3">
                                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-productName">
-                                        Brand Name
+                                        اسم برند
                                     </label>
                                     <select v-model="form.brandName">
 
@@ -88,7 +86,7 @@ defineProps({
                             <div class="flex flex-wrap -mx-3 mb-6">
                                 <div class="w-full px-3">
                                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-productName">
-                                        Product Category
+                                        دسته بندی محصول
                                     </label>
                                     <select v-model="form.productCategory">
                                         <option v-for="option in cat(categoryItems)" :value="option.id">
@@ -104,7 +102,7 @@ defineProps({
                                 <button
                                     type="submit"
                                     class="float-left defaultButton mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                    Add new product
+                                    محصول اضافه کنید
                                 </button>
                             </div>
                         </form>

@@ -11,7 +11,7 @@
                     </span>
                 </div>
                 <div class="menu">
-                    <div class="closeButton" @click="toggle">&times;</div>
+                    <div class="closeButton" @click="closeMenu">&times;</div>
                     <div class="mt-2">
                         <div v-if="$page.props.auth.role === 'admin'">
                             <ul v-for="(links, key) in adminLinks" :key="key" class="space-y-1 max-w-md list-none list-inside text-gray-500 dark:text-gray-400">
@@ -49,14 +49,19 @@ export default {
     data() {
         return {
             adminLinks: [
-                {'key' : 1, 'name' : 'Create brand', 'logo': 'far fa-plus-square', 'route': 'brand.index'},
-                {'key' : 2, 'name' : 'Create products', 'logo': 'fas fa-tshirt', 'route': 'showCreateProduct.index'},
-                {'key' : 3, 'name' : 'Create product features', 'logo': 'fa fa-home', 'route': 'adminProductFeature.index'},
-                {'key' : 4, 'name' : 'Add product images', 'logo': 'fa fa-camera', 'route': 'adminProductImage.index'},
-                {'key' : 5, 'name' : 'Dashboard', 'logo': 'fas fa-user-edit', 'route': 'admin_dashboard'},
-                {'key' : 6, 'name' : 'Home page', 'logo': 'fa fa-home', 'route': 'home.index'}
+                {'key' : 1, 'name' : 'افزودن برند جدید', 'logo': 'far fa-plus-square', 'route': 'brand.index'},
+                {'key' : 2, 'name' : 'افزودن محصول جدید', 'logo': 'fas fa-tshirt', 'route': 'showCreateProduct.index'},
+                {'key' : 3, 'name' : 'افزودن جزئیات محصول', 'logo': 'fa fa-home', 'route': 'adminProductFeature.index'},
+                {'key' : 4, 'name' : 'افزودن تصاویر', 'logo': 'fa fa-camera', 'route': 'adminProductImage.index'},
+                {'key' : 5, 'name' : 'صفحه اصلی', 'logo': 'fas fa-user-edit', 'route': 'admin_dashboard'},
+                {'key' : 6, 'name' : 'خانه', 'logo': 'fa fa-home', 'route': 'home.index'}
             ],
             // userLinks: [
+            //     {'key' : 1, 'name' : 'Shopping history', 'logo': 'far fa-plus-square'},
+            //     {'key' : 2, 'name' : 'Products', 'logo': 'fas fa-tshirt', 'route': 'show_create_product'},
+            //     {'key' : 3, 'name' : 'Basket', 'logo': 'fas fa-user-edit'},
+            //     {'key' : 4, 'name' : 'Image', 'logo': 'fa fa-camera', 'route': 'show_create_product'}
+            // ]            // userLinks: [
             //     {'key' : 1, 'name' : 'Shopping history', 'logo': 'far fa-plus-square'},
             //     {'key' : 2, 'name' : 'Products', 'logo': 'fas fa-tshirt', 'route': 'show_create_product'},
             //     {'key' : 3, 'name' : 'Basket', 'logo': 'fas fa-user-edit'},
@@ -73,21 +78,13 @@ export default {
         category: Object
     },
     methods: {
-
-        toggleMenu() {
-
-            const menu = document.querySelector(".mobile-menu")
-            menu.classList.toggle("hidden")
-
-        },
         toggle() {
-            const overlay = document.getElementById('overlay')
-            this.expanded = !this.expanded;
-
-            const menu = document.querySelector('.menu');
-            const trigger = document.querySelector('.trigger');
-            menu.classList.toggle('menu--open');
-
+            const element = document.querySelector('.menu');
+            element.style.marginRight = '0px'
+        },
+        closeMenu() {
+            const element = document.querySelector('.menu');
+            element.style.marginRight = '-320px'
         }
     }
 }

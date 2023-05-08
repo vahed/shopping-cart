@@ -27,7 +27,7 @@ class AdminCategoryController extends Controller
 
             foreach( $category as $cat){
                 if($cat->name == $request->name) {
-                    return redirect()->back()->with('error', 'This category name already exists.');
+                    return redirect()->back()->with('error', 'این دسته بندی در بانک دادها موجود است۰');
                 }
             }
 
@@ -36,7 +36,7 @@ class AdminCategoryController extends Controller
                 'parent_id' =>$request->parentId
             ]);
 
-            return redirect()->back()->with('success', 'Category has been created successfully.');
+            return redirect()->back()->with('success', 'دسته بندی به بانک دادها افزوده شد۰');
         }
     }
 }

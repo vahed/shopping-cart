@@ -60,7 +60,7 @@ class AdminProductFeatureController extends Controller
             ]
         );
 
-        return redirect()->back()->with('success', 'New product added to the database');
+        return redirect()->back()->with('success', 'محصول به بانک دادها افزوده شد۰');
     }
 
     /**
