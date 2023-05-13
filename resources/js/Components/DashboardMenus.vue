@@ -10,7 +10,7 @@
                         <span class="flex-1">Menu</span>
                     </span>
                 </div>
-                <div class="menu">
+                <div class="menu" id="menu">
                     <div class="closeButton" @click="closeMenu">&times;</div>
                     <div class="mt-2">
                         <div v-if="$page.props.auth.role === 'admin'">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </a>
-
+{{getViewPortHeight}}
     </div>
 </template>
 
@@ -51,7 +51,7 @@ export default {
             adminLinks: [
                 {'key' : 1, 'name' : 'افزودن برند جدید', 'logo': 'far fa-plus-square', 'route': 'brand.index'},
                 {'key' : 2, 'name' : 'افزودن محصول جدید', 'logo': 'fas fa-tshirt', 'route': 'showCreateProduct.index'},
-                {'key' : 3, 'name' : 'افزودن جزئیات محصول', 'logo': 'fa fa-home', 'route': 'adminProductFeature.index'},
+                {'key' : 3, 'name' : 'افزودن جزئیات محصول', 'logo': 'fa fa-info-circle', 'route': 'adminProductFeature.index'},
                 {'key' : 4, 'name' : 'افزودن تصاویر', 'logo': 'fa fa-camera', 'route': 'adminProductImage.index'},
                 {'key' : 5, 'name' : 'صفحه اصلی', 'logo': 'fas fa-user-edit', 'route': 'admin_dashboard'},
                 {'key' : 6, 'name' : 'خانه', 'logo': 'fa fa-home', 'route': 'home.index'}
@@ -79,13 +79,17 @@ export default {
     },
     methods: {
         toggle() {
-            const element = document.querySelector('.menu');
+            const height = window.outerHeight
+            const element = document.querySelector('.menu')
             element.style.marginRight = '0px'
+            element.style.height = height+'px'
+            console.log(element.style.height)
         },
         closeMenu() {
-            const element = document.querySelector('.menu');
+            const element = document.querySelector('.menu')
             element.style.marginRight = '-320px'
-        }
+        },
+
     }
 }
 </script>

@@ -18,7 +18,7 @@ const showingNavigationDropdown = ref(false);
                 <!-- Primary Navigation Menu -->
                 <div class="mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
-                        
+
                     <DashboardMenus />
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <!-- Settings Dropdown -->
@@ -37,8 +37,8 @@ const showingNavigationDropdown = ref(false);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink :href="route('logout')" method="post" as="button">
-                                            Log Out
+                                        <DropdownLink :href="route('logout')" method="post" as="button" class="text-right">
+                                            خروج
                                         </DropdownLink>
                                     </template>
                                 </Dropdown>
@@ -73,8 +73,8 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('logout')" method="post" as="button">
-                                Log Out
+                            <ResponsiveNavLink :href="route('logout')" method="post" as="button" class="text-right">
+                                خروج
                             </ResponsiveNavLink>
                         </div>
                     </div>

@@ -28,7 +28,7 @@
                     <!-- Secondary Navbar items -->
                     <div class="hidden md:flex items-center space-x-3">
                         <div v-if="$page.props.auth.role === 'admin'">
-                            <NavLink :href="route('admin_dashboard')">Dashboard</NavLink>
+                            <NavLink :href="route('admin_dashboard')">داشبورد</NavLink>
                         </div>
                         <div v-if="$page.props.auth.role === 'admin'">
                             <NavLink :href="route('logout')" method="post" as="button">خروج</NavLink>
@@ -38,7 +38,7 @@
                                      class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-yellow-500 hover:text-white transition duration-300"
                                      method="post"
                                      as="button">
-                                Log Out
+                                خروج
                             </NavLink>
                         </div>
                         <div v-if="$page.props.auth.user">
@@ -46,7 +46,7 @@
                                      class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-yellow-500 hover:text-white transition duration-300"
                                      method="get"
                                      as="button">
-                                Dashboard
+                                داشبورد
                             </NavLink>
                         </div>
                         <template v-if="!$page.props.auth.user">
@@ -98,7 +98,7 @@
                     </div>
 
                     <div v-if="$page.props.auth.role === 'admin'">
-                        <MobileNavLink :href="route('admin_dashboard')" method="get" as="button">Dashboard</MobileNavLink>
+                        <MobileNavLink :href="route('admin_dashboard')" method="get" as="button">داشبورد</MobileNavLink>
                         <MobileNavLink :href="route('logout')" method="post" as="button">خروج</MobileNavLink>
                     </div>
 
