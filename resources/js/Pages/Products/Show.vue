@@ -69,8 +69,8 @@ import { Head } from '@inertiajs/inertia-vue3'
 
                     <div class="font-semibold grid grid-cols-1 mt-4 gap-4 border-t-2 text-right">
                         <span
-                            :class="checkQty(totalQuantity) === 'Out of stock' ? 'text-red-600'
-                                    : checkQty(totalQuantity) === 'Low in stock' ? 'text-red-400'
+                            :class="checkQty(totalQuantity) === 'موجود نیست' ? 'text-red-600'
+                                    : checkQty(totalQuantity) === 'تعداد کمی موجود است' ? 'text-red-400'
                                     : 'text-green-600'"
                             class="mt-4"
                         >{{ checkQty(totalQuantity) }}</span>
@@ -79,7 +79,7 @@ import { Head } from '@inertiajs/inertia-vue3'
                         <div class="flex border-yellow-200 mt-4">
                             <div
                                 class="title-font font-medium text-2xl text-gray-900"
-                            >Quantity
+                            >تعداد
                             </div>
                         </div>
                         <div class="float-right text-right mt-4">
@@ -102,7 +102,7 @@ import { Head } from '@inertiajs/inertia-vue3'
                         <button
                             class="flex ml-auto text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded"
                             @click.prevent="addToCard(quantity)"
-                        >Add To Cart</button>
+                        >به سبد اضافه کنید</button>
                     </div>
                 </div>
             </div>
@@ -207,11 +207,11 @@ export default {
         },
         checkQty(totalQuantity) {
             if(totalQuantity < 10 && totalQuantity > 0)
-                return 'Low in stock'
+                return 'تعداد کمی موجود است'
             else if(totalQuantity === 0)
-                return 'Out of stock'
+                return 'موجود نیست'
             else
-                return 'In stock'
+                return 'موجود ا ست'
         }
     },
     created() {

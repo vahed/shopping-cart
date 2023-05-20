@@ -9,6 +9,7 @@ import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import Navbar from "@/Shared/Navbar.vue";
 import Search from "@/Layouts/Search.vue";
+import Footer from "@/Layouts/Footer.vue";
 
 defineProps({
     canResetPassword: Boolean,
@@ -35,13 +36,14 @@ const submit = (url) => {
 </script>
 
 <template>
+
     <Head title="Log in" />
     <div class="grid grid-cols-1 divide-y">
         <Navbar />
         <Search />
     </div>
-    <GuestLayout>
 
+    <GuestLayout>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
@@ -77,6 +79,11 @@ const submit = (url) => {
                 </PrimaryButton>
             </div>
         </form>
-    </GuestLayout>
-</template>
 
+    </GuestLayout>
+
+    <footer class="bg-gray-200">
+        <Footer />
+    </footer>
+
+</template>

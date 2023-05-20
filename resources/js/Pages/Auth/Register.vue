@@ -7,6 +7,7 @@ import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import Navbar from "@/Shared/Navbar.vue";
 import Search from "@/Layouts/Search.vue";
+import Footer from "@/Layouts/Footer.vue";
 
 defineProps({
     registerRequestUrl: String
@@ -101,4 +102,8 @@ const submit = (url) => {
             </div>
         </form>
     </GuestLayout>
+
+    <footer class="bg-gray-100">
+        <Footer />
+    </footer>
 </template>

@@ -7,13 +7,13 @@ defineProps({
 <template>
     <div class="w-full">
         <div class="lg:w-2/3 w-full mx-auto mt-8 overflow-auto">
-            <div class="text-gray-900 text-xl title-font font-medium mb-4 text-center font-bold">Shopping Summary</div>
+            <div class="text-gray-900 text-xl title-font font-medium mb-4 text-center font-bold">سبد خرید</div>
             <form name="form">
                 <div class="flex flex-row">
-                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm rounded-tl rounded-bl font-bold">Item</div>
-                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold">Quantity</div>
-                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold">Price</div>
-                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold">Actions</div>
+                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm rounded-tl rounded-bl font-bold">کالا</div>
+                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold">تعداد</div>
+                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold">قیمت</div>
+                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold">اقدامات</div>
                 </div>
                 <div class="divide-y divide-solid m-4">
                     <div></div>
@@ -54,13 +54,13 @@ defineProps({
                     <div></div>
                 </div>
                 <div class="flex flex-row">
-                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm rounded-tl rounded-bl font-bold">Total Quantity</div>
+                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm rounded-tl rounded-bl font-bold">کل تعداد</div>
                     <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold"></div>
                     <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold"></div>
                     <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold" v-text="orderTotalQuantity"></div>
                 </div>
                 <div class="flex flex-row">
-                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm rounded-tl rounded-bl font-bold">Total Amount</div>
+                    <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm rounded-tl rounded-bl font-bold">قیمت کل</div>
                     <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold"></div>
                     <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold"></div>
                     <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm font-bold" v-text="orderTotalPrice"></div>
@@ -68,7 +68,7 @@ defineProps({
                 <div class="m-4">
                     <Link :href="route('checkout.index')">
                         <button class="w-full bg-yellow-500 hover:bg-yellow-500 font-bold p-3 rounded text-white focus:outline-none hover:bg-yellow-600 rounded">
-                            Proceed to Checkout
+                            به سمت پرداخت
                         </button>
                     </Link>
                 </div>

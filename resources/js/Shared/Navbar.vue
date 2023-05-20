@@ -131,10 +131,8 @@ export default {
     methods: {
 
         toggleMenu() {
-
             const menu = document.querySelector(".mobile-menu")
             menu.classList.toggle("hidden")
-
         },
         toggle() {
             const overlay = document.getElementById('overlay')

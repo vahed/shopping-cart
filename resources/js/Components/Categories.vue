@@ -29,6 +29,7 @@ export default {
     methods: {
 
         toggle() {
+            console.log('menu working');
             const element = document.querySelector('.menu');
             element.style.marginRight = '0px'
         },

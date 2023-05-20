@@ -1,5 +1,6 @@
 /* Fontawesome */
 @import "@fortawesome/fontawesome-free/css/all.css";
+@import 'swiper/swiper-element.min.css';
 
 @tailwind base;
 @tailwind components;

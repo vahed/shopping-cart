@@ -3,6 +3,7 @@ import { Head } from '@inertiajs/inertia-vue3';
 import Footer from '@/Layouts/Footer.vue';
 import Navbar from "@/Shared/Navbar.vue";
 import Search from "@/Layouts/Search.vue";
+import Carousel from '../Components/Carousel.vue'
 
 defineProps({
     canLogin: Boolean,
@@ -24,7 +25,7 @@ defineProps({
 
     <!-- main -->
 
-    <section class="container mx-auto px-6 p-10">
+    <div class="container mx-auto px-6 p-10">
         <h1 class="text-2xl text-center font-black">Choose the category suitable for your need</h1>
         <div class="grid grid-cols-3 gap-3 mt-5">
             <div>
@@ -37,9 +38,9 @@ defineProps({
                 <img class="carousel-height block w-full" src="https://images.pexels.com/photos/1471628/pexels-photo-1471628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="First slide" />
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="container mx-auto px-6 p-10">
+    <div class="container mx-auto px-6 p-10">
         <h1 class="text-1xl text-center font-black">Look at our fine stylish foot ware</h1>
         <div class="grid grid-cols-4 gap-2 mt-5">
             <div>
@@ -56,25 +57,16 @@ defineProps({
             </div>
 
         </div>
-    </section>
+    </div>
 
 
     <!-- footer -->
-    <footer class="bg-gray-100">
+    <footer class="bg-gray-200">
         <Footer />
     </footer>
 
 </template>
 
-<script>
-import Carousel from '../Components/Carousel.vue'
-
-export default {
-    components : {
-        Carousel
-    },
-}
-</script>
 <style scoped>
 body {
   margin: 0;

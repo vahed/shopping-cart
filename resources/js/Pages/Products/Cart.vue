@@ -15,9 +15,9 @@ defineProps({
 
     <div class="grid grid-cols-12 mx-2 gap-2">
         <div class="divide-y divide-solid xl:col-span-7 lg:col-span-7 md:col-span-7 col-span-12">
-            <div class="text-2xl ml-5 font-semibold mt-20">Shopping Basket</div>
+            <div class="text-2xl ml-5 font-semibold mt-20">سبد خرید</div>
             <div class="mt-5" v-if="cartItems.length === 0">
-                <Link :href="route('products.index')">Browse to product page</Link>
+                <Link :href="route('products.index')">به صفحه محصولات مراجعه کنید</Link>
             </div>
             <div class="flex flex-row mt-5" v-for="(cartItem, key) in cartItems" :key="key">
                 <div class="basis-1/3 md:basis-1/3 px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm rounded-tl rounded-bl font-bold">
