@@ -25,8 +25,14 @@
         </div>
     </div>
 
+    <div class="mb-20 mr-3 mt-5">
+        <Pagination :products="products" />
+    </div>
 
-    <Pagination :products="products" />
+
+    <footer>
+        <Footer />
+    </footer>
 </template>
 
 <script>
@@ -34,10 +40,12 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
 import Navbar from "@/Shared/Navbar.vue";
 import Pagination from "@/Components/Pagination.vue"
 import Search from "@/Layouts/Search.vue";
+import Footer from "@/Layouts/Footer.vue";
 
 export default {
     name: "Product.vue",
     components: {
+        Footer,
         Search,
         Navbar,
         Head,

@@ -82,7 +82,7 @@ const submit = (url) => {
 
     </GuestLayout>
 
-    <footer class="bg-gray-200">
+    <footer>
         <Footer />
     </footer>
 

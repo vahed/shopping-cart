@@ -1,5 +1,6 @@
 <template>
-    <div class="container mx-auto px-6 pt-10 pb-6">
+    <div class="bg-gray-200">
+        <div class="container mx-auto px-6 pt-10 pb-6">
         <div class="flex flex-wrap">
             <div class="w-full md:w-1/3">
                 <h5 class="uppercase mb-6 font-bold">خدمات مشتریان</h5>
@@ -42,7 +43,7 @@
             </div>
         </div>
     </div>
-
+    </div>
 </template>
 
 <script>
