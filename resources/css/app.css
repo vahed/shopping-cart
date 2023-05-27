@@ -1,8 +1,8 @@
 /* Fontawesome */
 @import "@fortawesome/fontawesome-free/css/all.css";
+@import "shabnam-font/dist/font-face.css";
 @import 'swiper/swiper-element.min.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-

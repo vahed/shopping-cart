@@ -6,7 +6,7 @@
 
 
     <h2 class="text-4xl font-bold text-center text-gray-800 mb-8 mt-5">
-        Products
+        محصولات
     </h2>
 
     <div class="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">

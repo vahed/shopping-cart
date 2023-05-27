@@ -62,7 +62,4 @@ export default {
 </script>
 
 <style scoped>
-.swiper-button-next{
-    color: green !important;
-}
 </style>

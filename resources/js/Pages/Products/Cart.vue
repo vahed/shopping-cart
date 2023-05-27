@@ -46,7 +46,7 @@ defineProps({
                         </div>
                         <div class="basis-1/3">
                             <Link class="text-blue-500" @click="deleteSingleItem(cartItem)" preserve-state>
-                                Delete
+                                حذف
                             </Link>
                         </div>
                     </div>

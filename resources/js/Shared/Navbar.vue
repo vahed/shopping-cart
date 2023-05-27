@@ -10,7 +10,7 @@
                     <div class="hidden md:flex items-center space-x-1">
                         <NavLink :href="route('home.index')" :active="$page.component === 'Welcome'">خانه</NavLink>
                         <NavLink :href="route('products.index')" :active="$page.component === 'Products/Product'">محصولات</NavLink>
-                        <NavLink :href="route('home.index')" >درباره پاپیون</NavLink>
+                        <NavLink :href="route('home.index')">درباره پاپیون</NavLink>
                         <NavLink :href="route('products.index')">تماس با ما</NavLink>
                         <Link :href="route('cart.index')" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-600 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
                             <div class="relative">
@@ -89,8 +89,8 @@
                 <ul class="">
                     <MobileNavLink :href="route('home.index')" :active="$page.component === 'Welcome'">خانه</MobileNavLink>
                     <MobileNavLink :href="route('products.index')" :active="$page.component === 'Products/Product'">محصولات</MobileNavLink>
-                    <MobileNavLink :href="route('products.index')" >About</MobileNavLink>
-                    <MobileNavLink :href="route('products.index')" >Contact Us</MobileNavLink>
+                    <MobileNavLink :href="route('products.index')" >درباره پاپیون</MobileNavLink>
+                    <MobileNavLink :href="route('products.index')" >تماس با ما</MobileNavLink>
 
                     <div v-if="!$page.props.auth.user">
                         <MobileNavLink :href="route('login')" :active="$page.component === 'Auth/Login'">ورود</MobileNavLink>

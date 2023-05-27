@@ -10,6 +10,14 @@ class UserController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Welcome');
+        if(Auth::user()?->role === 'user') {
+            return Inertia::render('User/Dashboard');
+        }
+            return Inertia::render('Welcome');
+    }
+
+    public function userShoppingList()
+    {
+
     }
 }

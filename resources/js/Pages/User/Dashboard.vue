@@ -22,10 +22,10 @@ defineProps({
     </div>
     <div id="previous-page">
         <h2 class="text-4xl mt-10 font-bold text-center text-gray-800 mb-8">
-            User Dashboard
+            داشبورد کاربر
         </h2>
         <div v-if="urlBeforeLogin">
-            <Link :href="urlBeforeLogin">Back to your search</Link>
+            <Link :href="urlBeforeLogin">بازگشت به صفحه اولیه</Link>
         </div>
     </div>
     <Footer />

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\AdminBrandController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminGetProductFeatureController;
@@ -15,8 +17,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
 use App\Models\Category;
-use Illuminate\Foundation\Application;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,12 +58,16 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'user'])->group(function () {
-    Route::get('user_dashboard', function () {
-        return Inertia::render('User/Dashboard', [
-            'isLogged' => Auth::check(),
-        ]);
-    })->name('user_dashboard');
+    Route::get('user_dashboard', [UserController::class, 'index'])->name('user_dashboard');
 });
+
+//Route::middleware(['auth', 'user'])->group(function () {
+//    Route::get('user_dashboard', function () {
+//        return Inertia::render('User/Dashboard', [
+//            'isLogged' => Auth::check(),
+//        ]);
+//    })->name('user_dashboard');
+//});
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('dashboard', function () {
@@ -88,5 +92,25 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('createNewBrand',[AdminBrandController::class, 'createNewBrand'])->name('brand.createNewBrand');
     Route::get('images',[AdminImageController::class, 'index'])->name('image.index');
 });
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/profile', function () {
+    // Only verified users may access this route...
+})->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
