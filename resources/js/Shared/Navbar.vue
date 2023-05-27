@@ -126,20 +126,6 @@ export default {
         NavLink,
         MobileNavLink
     },
-    methods: {
-
-        toggleMenu() {
-            const menu = document.querySelector(".mobile-menu")
-            menu.classList.toggle("hidden")
-        },
-        toggle() {
-            this.expanded = !this.expanded;
-
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('menu--open');
-
-        }
-    }
 }
 </script>
 
