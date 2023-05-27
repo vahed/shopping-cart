@@ -1,8 +1,8 @@
 <template>
     <div class="flex">
         <a href="#" class="flex items-center py-4 px-2">
-            <div class="font-semibold text-gray-500 text-lg trigger font-semibold hover:text-yellow-500 transition duration-300" @click="toggle">
-                <i class="fa fa-bars float-left" aria-hidden="true"><span class="m-1">دسته‌بندی کالاها</span></i>
+            <div class="font-semibold text-gray-500 text-lg trigger font-semibold hover:text-white transition duration-300" @click="toggle">
+                <i class="fa fa-bars float-left" aria-hidden="true"><span class="m-1 font-shabnam">دسته‌بندی کالاها</span></i>
             </div>
             <div class="menu">
                 <div class="closeButton" @click="closeMenu">&times;</div>

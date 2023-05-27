@@ -1,5 +1,11 @@
+body{
+    font-family: 'Shabnam', sans-serif !important;
+}
 .font-mont{
     font-family: 'Montserrat', sans-serif;
+}
+.font-shabnam {
+    font-family: 'Shabnam', sans-serif !important;
 }
 .menu {
     top: 0;

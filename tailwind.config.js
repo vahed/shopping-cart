@@ -20,4 +20,8 @@ module.exports = {
     plugins: [
         require('@tailwindcss/forms')
     ],
+
+    variants: {
+        backgroundColor: ['responsive', 'hover', 'focus', 'active']
+    }
 };
