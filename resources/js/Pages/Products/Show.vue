@@ -218,7 +218,7 @@ export default {
         defaultProductPhotos() {
             let arr= []
             let entries = Object.entries(this.product[0].product_features[0]['images'])
-                entries.map( ([val] = entry) => {
+                entries.map( ([key, val] = entry) => {
                 arr.push(val['image_url'])
             });
             this.photos = arr

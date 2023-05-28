@@ -28,7 +28,6 @@ export default {
     },
     methods: {
         toggle() {
-            console.log('menu working');
             const element = document.querySelector('.menu');
             const closeButton = document.querySelector('.closeButton');
             closeButton.style.display = 'block'

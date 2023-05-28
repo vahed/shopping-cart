@@ -73,6 +73,14 @@ body{
         width: 118px;
         margin: 1px;
     }
+    .closeButton {
+        position: absolute;
+        top: 0;
+        right: 293px;
+        font-size: 36px;
+        margin-right: 8px;
+        color: white;
+    }
 }
 @media only screen and (max-width: 1020px) {
     .sm-thumb-img {

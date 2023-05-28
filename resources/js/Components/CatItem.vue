@@ -1,7 +1,7 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue'
 import { ChevronDownIcon } from "@heroicons/vue/20/solid"
-import { computed, ref } from "vue"
+import { computed } from "vue"
 
 const props =defineProps({
     item: Object,
@@ -27,7 +27,7 @@ const hasActiveChild = computed(() => {
         >
 
             <span class="flex-1" v-if="item.children.length === 0" @click="productByCategory(item.id)">{{ item.name }}</span>
-            <span class="flex-1" v-if="item.children.length !== 0" >
+            <div class="flex-1" v-if="item.children.length !== 0" >
                 <div class="flex flex-row">
                     <div>
                         {{ item.name }}
@@ -39,7 +39,7 @@ const hasActiveChild = computed(() => {
                     open ? '-rotate-180 text-gray-600' : 'text-gray-400']"/>
                     </div>
                 </div>
-            </span>
+            </div>
 
         </DisclosureButton>
 
@@ -58,6 +58,8 @@ const hasActiveChild = computed(() => {
 export default {
     methods: {
         productByCategory(category_id) {
+            document.getElementById('overlay').style.display = 'none'
+
             this.$inertia.get(this.route('category.productByCategory', category_id));
         }
     }
