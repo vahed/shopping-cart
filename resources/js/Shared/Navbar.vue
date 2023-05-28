@@ -86,13 +86,13 @@
             <!-- mobile menu -->
             <div class="hidden mobile-menu">
                 <ul>
-                    <MobileNavLink :href="route('home.index')" :active="$page.component === 'Welcome'">خانه</MobileNavLink>
-                    <MobileNavLink :href="route('products.index')" :active="$page.component === 'Products/Product'">محصولات</MobileNavLink>
-                    <MobileNavLink :href="route('products.index')" >درباره پاپیون</MobileNavLink>
-                    <MobileNavLink :href="route('products.index')" >تماس با ما</MobileNavLink>
+                    <MobileNavLink :href="route('home.index')" :active="$page.component === 'Welcome'" class="border-b-2">خانه</MobileNavLink>
+                    <MobileNavLink :href="route('products.index')" :active="$page.component === 'Products/Product'" class="border-b-2">محصولات</MobileNavLink>
+                    <MobileNavLink :href="route('products.index')" class="border-b-2">درباره پاپیون</MobileNavLink>
+                    <MobileNavLink :href="route('products.index')" class="border-b-2">تماس با ما</MobileNavLink>
 
                     <li v-if="!$page.props.auth.user">
-                        <MobileNavLink :href="route('login')" :active="$page.component === 'Auth/Login'">ورود</MobileNavLink>
+                        <MobileNavLink :href="route('login')" :active="$page.component === 'Auth/Login'" class="border-b-2">ورود</MobileNavLink>
                         <MobileNavLink :href="route('register')" :active="$page.component === 'Auth/Register'">ثبت نام</MobileNavLink>
                     </li>
 
@@ -125,6 +125,20 @@ export default {
         Categories,
         NavLink,
         MobileNavLink
+    },
+    methods: {
+
+        toggleMenu() {
+            const menu = document.querySelector(".mobile-menu")
+            menu.classList.toggle("hidden")
+        },
+        toggle() {
+            this.expanded = !this.expanded;
+
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('menu--open');
+
+        }
     },
 }
 </script>

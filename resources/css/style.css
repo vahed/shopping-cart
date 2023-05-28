@@ -34,8 +34,9 @@ body{
 
 .closeButton {
     position: absolute;
+    display: none;
     top: 0;
-    right: 293px;
+    right: 320px;
     font-size: 36px;
     margin-right: 8px;
     color: white;
@@ -68,5 +69,34 @@ body{
     .m-r-10 {
         margin-right: 15px;
     }
+    .xs-thumb-img {
+        width: 118px;
+        margin: 1px;
+    }
 }
+@media only screen and (max-width: 1020px) {
+    .sm-thumb-img {
+        width: 78px;
+        margin: 1px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .md-thumb-img {
+        width: 105px;
+        margin: 1px;
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .lg-thumb-img {
+        width: 105px;
+        margin: 1px;
+    }
+}
+@media only screen and (min-width: 1401px) {
+    .xl-thumb-img {
+        width: 105px;
+        margin: 1px;
+    }
+}
+
 

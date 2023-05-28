@@ -6,7 +6,9 @@ import { Head } from '@inertiajs/inertia-vue3'
 </script>
 
 <template>
-    <Head title="Show product" />
+    <Head>
+        <title>Show product</title>
+    </Head>
 
     <!-- Navbar -->
     <div class="grid grid-cols-1 divide-y">
@@ -17,36 +19,21 @@ import { Head } from '@inertiajs/inertia-vue3'
     <section class="container mx-auto mt-10" v-if="product">
         <div class="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 xm:grid-col-12 gap-4">
 
-            <div class="xl:flex lg:flex md:flex">
-                <div class="flex-shrink-0">
-                    <div class="max-w-xl flex flex-col">
-                        <div class="flex items-center sm:h-80">
-                            <div :class="{'cursor-not-allowed opacity-50': ! hasPrevious()}"  class="hidden sm:block cursor-pointer">
-                                <svg version="1.0" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="currentColor" class="h-8" @click="previousPhoto()">
-                                    <path d="m42.166 55.31-24.332-25.31 24.332-25.31v50.62z" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.125"/>
-                                </svg>
-                            </div>
+            <div class="xl:flex lg:flex md:flex xs:flex">
+                    <div class="max-w-xl flex flex-col xs:m-3 sm:mb-16 xl:mb-20 lg:mb-20 md:mb-20 sm:mb-24">
+                        <div class="flex items-center">
                             <div class="w-full sm:w-108 flex justify-center">
-                                <img ref="mainImage" :src="photos[0]" class="w-full xs:w-auto sm:w-auto sm:h-80 m-l-10 m-r-10" loading="lazy"/>
-                            </div>
-
-                            <div :class="{'cursor-not-allowed opacity-50': ! hasNext()}"  class="hidden sm:block cursor-pointer">
-                                <svg version="1.0" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="currentColor" class="h-8" @click="nextPhoto()">
-                                    <path d="m17.834 55.31 24.332-25.31-24.332-25.31v50.62z" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.125"/>
-                                </svg>
+                                <img ref="mainImage" :src="photos[0]" class="w-full xs:w-auto sm:w-auto sm:h-80 m-l-10 m-r-10" loading="lazy" alt="img"/>
                             </div>
                         </div>
 
-                        <div class="flex justify-center mt-1 space-x-1">
+                        <div class="flex justify-center xs:justify-evenly mt-1 xs:bg-yellow-300 xs:border-gray-200-400 xs:m-4 xs:border-2">
                             <div v-for="(img, key) in photos" :key="key">
-                                <img :src="img" :class="{'ring-2 opacity-50': currentPhoto == key}" class="h-16 w-16" @click="pickPhoto(key)" />
+                                <img :src="img" :class="{'ring-2 opacity-50': currentPhoto === key}" class="h-16 xs-thumb-img sm-thumb-img md-thumb-img lg-thumb-img xl-thumb-img sm:m-1" alt="img" @click="pickPhoto(key)" />
                             </div>
                         </div>
                     </div>
-
-                </div>
             </div>
-
 
             <div class="xl:col-span-2 lg:col-span-2 md:col-span-2 sm:col-span-2 m-5">
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0" >
@@ -108,15 +95,17 @@ import { Head } from '@inertiajs/inertia-vue3'
             </div>
         </div>
     </section>
-
+    <Footer />
 </template>
 
 <script>
-
+import Footer from '@/Layouts/Footer.vue';
 export default {
     name: "Show.vue",
+    components: { Footer},
     data() {
         return {
+            photos: [],
             productName: String,
             color: String,
             size: String,
@@ -128,7 +117,6 @@ export default {
             price: null,
             description: String,
             currentPhoto: -1,
-            photos: [],
             changePhotos: [],
             productFeature: Object
         }
@@ -230,7 +218,7 @@ export default {
         defaultProductPhotos() {
             let arr= []
             let entries = Object.entries(this.product[0].product_features[0]['images'])
-                entries.map( ([key, val] = entry) => {
+                entries.map( ([val] = entry) => {
                 arr.push(val['image_url'])
             });
             this.photos = arr
@@ -242,5 +230,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

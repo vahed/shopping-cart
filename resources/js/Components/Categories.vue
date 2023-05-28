@@ -27,17 +27,20 @@ export default {
         category: Object
     },
     methods: {
-
         toggle() {
             console.log('menu working');
             const element = document.querySelector('.menu');
+            const closeButton = document.querySelector('.closeButton');
+            closeButton.style.display = 'block'
             element.style.marginRight = '0px'
-            document.getElementById("overlay").style.display = "block";
+            document.getElementById('overlay').style.display = 'block'
         },
         closeMenu() {
             const element = document.querySelector('.menu');
+            const closeButton = document.querySelector('.closeButton');
+            closeButton.style.display = 'none'
             element.style.marginRight = '-320px'
-            document.getElementById("overlay").style.display = "none";
+            document.getElementById('overlay').style.display = 'none'
         }
     }
 }
