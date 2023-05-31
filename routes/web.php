@@ -39,7 +39,7 @@ Route::put('/cart/{id}/decrement',[CartController::class, 'decrementItem'])->nam
 Route::delete('/cart/{id}/delete',[CartController::class, 'destroy'])->name('cart.delete');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-Route::post('/searchProducts', [ProductController::class, 'searchProducts'])->name('products.searchProducts');
+Route::get('/searchProducts', [ProductController::class, 'searchProducts'])->name('products.searchProducts');
 
 Route::get('/show/{id}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');

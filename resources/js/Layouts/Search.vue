@@ -30,7 +30,7 @@ export default {
     },
     methods: {
         submit() {
-            this.$inertia.post(this.route('products.searchProducts',  this.form ));
+            this.$inertia.get(this.route('products.searchProducts',  this.form ));
         }
     }
 }
