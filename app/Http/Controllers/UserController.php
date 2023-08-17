@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\ProductFeature;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
@@ -13,9 +15,13 @@ class UserController extends Controller
     public function index()
     {
         if(Auth::user()?->role === 'user') {
-            $order = Order::with('products')->where('user_id', 10)->get();
 
-            return Inertia::render('User/Dashboard');
+            $user = Auth::user();
+            $orders = Order::getUserOrders($user->id);
+
+            return Inertia::render('User/Dashboard',[
+                'orders' => $orders
+            ]);
         }
             return Inertia::render('Welcome');
     }

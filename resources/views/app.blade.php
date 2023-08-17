@@ -17,5 +17,6 @@
     <body class="font-sans antialiased">
         @inertia
     <div id="overlay"></div>
+
     </body>
 </html>

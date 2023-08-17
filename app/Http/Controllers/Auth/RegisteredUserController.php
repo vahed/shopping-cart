@@ -67,7 +67,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         if($user){
-            return redirect()->away($urlBeforeRegister);
+            return redirect(route('verification.notice'));
         }
 
         return redirect(RouteServiceProvider::HOME);

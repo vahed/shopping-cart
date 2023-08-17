@@ -36,7 +36,6 @@
                     </div>
                 </div>
             </a>
-{{getViewPortHeight}}
     </div>
 </template>
 

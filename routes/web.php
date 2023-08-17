@@ -29,7 +29,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::any('home', [UserController::class, 'index'])->name('home.index');
 
 Route::get('cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('cart', [CartController::class, 'store'])->name('cart.store');
@@ -57,17 +56,14 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth', 'user'])->group(function () {
+//Route::get('/profile', function () {
+    // Only verified users may access this route...
+//})->middleware(['auth', 'verified']);
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::any('home', [UserController::class, 'index'])->name('home.index');
     Route::get('user_dashboard', [UserController::class, 'index'])->name('user_dashboard');
 });
-
-//Route::middleware(['auth', 'user'])->group(function () {
-//    Route::get('user_dashboard', function () {
-//        return Inertia::render('User/Dashboard', [
-//            'isLogged' => Auth::check(),
-//        ]);
-//    })->name('user_dashboard');
-//});
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('dashboard', function () {
@@ -78,7 +74,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         ]);
     })->name('admin_dashboard');
 
-    Route::resource('adminProduct', AdminProductController::class);//->only('index','show','store');
+    Route::resource('adminProduct', AdminProductController::class);
     Route::resource('adminProductFeature', AdminProductFeatureController::class);
     Route::resource('adminProductImage', AdminProductImageController::class)->only('index','show','store');;
 
@@ -108,9 +104,5 @@ Route::post('/email/verification-notification', function (Request $request) {
 
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-
-Route::get('/profile', function () {
-    // Only verified users may access this route...
-})->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

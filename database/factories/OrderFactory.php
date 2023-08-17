@@ -28,7 +28,11 @@ class OrderFactory extends Factory
             'postcode' => $this->faker->postcode,
             'payment_gateway' => 'zarinpal',
             'user_id' => $this->faker->numberBetween(1, 10),
+            'product_id' => $this->faker->numberBetween(1, 10),
+            'product_feature_id' => $this->faker->numberBetween(1, 10),
+            'image_url_id' => $this->faker->numberBetween(1, 10),
             'transaction_id' => Str::random(15),
+            'quantity' => $this->faker->numberBetween(500, 1000),
             'total' => $this->faker->numberBetween(5000, 200000),
             'error' => null,
         ];

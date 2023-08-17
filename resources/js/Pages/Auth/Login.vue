@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from 'vue';
 import Checkbox from '@/Components/Checkbox.vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
@@ -50,6 +49,7 @@ const submit = (url) => {
         </div>
 
         <form @submit.prevent="submit(loginRequestUrl)">
+            <div class="text-4xl text-center mb-5">فرم ورود</div>
             <div>
                 <InputLabel for="email" value="ایمیل" />
                 <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />

@@ -41,7 +41,7 @@ const submit = (url) => {
     </div>
     <GuestLayout>
         <Head title="Register" />
-
+        <div class="text-4xl text-center mb-5">فرم ثبت نام</div>
         <form @submit.prevent="submit(registerRequestUrl)">
             <div>
                 <InputLabel for="name" value="نام و نام خا نوادگی" />
@@ -49,7 +49,7 @@ const submit = (url) => {
                 <InputError class="mt-2" :message="form.errors.name" />
             </div>
 
-            <div>
+            <div class="mt-4">
                 <InputLabel for="address" value="آدرس" />
                 <TextInput id="address" type="text" class="mt-1 block w-full" v-model="form.address" required autofocus autocomplete="address" />
                 <InputError class="mt-2" :message="form.errors.address" />

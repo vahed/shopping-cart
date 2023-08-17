@@ -29,13 +29,13 @@ defineProps({
         <h1 class="text-2xl text-center font-black">Choose the category suitable for your need</h1>
         <div class="grid grid-cols-3 gap-3 mt-5">
             <div>
-                <img class="carousel-height block w-full" src="https://images.pexels.com/photos/4960250/pexels-photo-4960250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="First slide" />
+                <img loading="lazy" class="carousel-height block w-full" src="https://images.pexels.com/photos/4960250/pexels-photo-4960250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="First slide" />
             </div>
             <div>
-                <img class="carousel-height block w-full" src="https://images.pexels.com/photos/4066296/pexels-photo-4066296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="First slide" />
+                <img loading="lazy" class="carousel-height block w-full" src="https://images.pexels.com/photos/4066296/pexels-photo-4066296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="First slide" />
             </div>
             <div>
-                <img class="carousel-height block w-full" src="https://images.pexels.com/photos/1471628/pexels-photo-1471628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="First slide" />
+                <img loading="lazy" class="carousel-height block w-full" src="https://images.pexels.com/photos/1471628/pexels-photo-1471628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="First slide" />
             </div>
         </div>
     </div>

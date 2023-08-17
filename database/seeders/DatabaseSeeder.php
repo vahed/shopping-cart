@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\Product;
+use App\Models\ProductFeature;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,24 +18,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
 
         $this->call([
            UserSeeder::class,
            ProductSeeder::class,
+           //CategorySeeder::class,
            OrderSeeder::class,
-           CategorySeeder::class,
-           BrandSeeder::class,
-           OrderProductSeeder::class
+           BrandSeeder::class
         ]);
 
-        $categories = Category::all();
-
-        Product::all()->each( function ($product) use ($categories) {
-           $product->categories()->attach(
-               $categories->random(2)->pluck('id')->toArray()
-           );
-        });
+//        $categories = Category::all();
+//
+//        Product::all()->each( function ($product) use ($categories) {
+//           $product->categories()->attach(
+//               $categories->random(2)->pluck('id')->toArray()
+//           );
+//        });
 
     }
 }

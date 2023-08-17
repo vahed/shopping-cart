@@ -7,6 +7,7 @@ import TextInput from '@/Components/TextInput.vue';
 import { Head, useForm } from '@inertiajs/inertia-vue3';
 import Navbar from "@/Shared/Navbar.vue";
 import Search from "@/Layouts/Search.vue";
+import Footer from '@/Layouts/Footer.vue';
 
 defineProps({
     status: String,
@@ -51,4 +52,6 @@ const submit = () => {
             </div>
         </form>
     </GuestLayout>
+
+    <Footer />
 </template>

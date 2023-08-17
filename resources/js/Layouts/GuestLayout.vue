@@ -1,6 +1,4 @@
 <script setup>
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { Link } from '@inertiajs/inertia-vue3';
 </script>
 
 <template>
@@ -11,7 +9,7 @@ import { Link } from '@inertiajs/inertia-vue3';
 <!--            </Link>-->
 <!--        </div>-->
 
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg mb-16 mt-16">
             <slot />
         </div>
     </div>

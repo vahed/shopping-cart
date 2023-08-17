@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique()->nullable();
             $table->string('product_code');
-            //$table->tinyText('image_path');
-            //$table->string('shopping_cost');
             $table->string('category_id');
             $table->string('brand_id');
             $table->timestamps();
