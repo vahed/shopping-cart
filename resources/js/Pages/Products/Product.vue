@@ -26,9 +26,8 @@ watch(search, value => {
     <h2 class="text-4xl font-bold text-center text-gray-800 mb-8 mt-5">
         محصولات
     </h2>
-    <input type="text" name="search"/>
 
-    <div class="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+    <div class="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2">
         <div v-for="product in products.data" :key="product.id">
             <div class="bg-white overflow-hidden" @click="showProduct(product)">
                 <div class="p-4">
