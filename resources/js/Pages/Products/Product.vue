@@ -28,13 +28,13 @@ watch(search, value => {
     </h2>
 
     <div class="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-2">
-        <div v-for="product in products.data" :key="product.id">
+        <div v-for="product in products['data']" :key="product.id">
             <div class="bg-white overflow-hidden" @click="showProduct(product)">
                 <div class="p-4">
-                    <img class="w-full mb-4" :src="product.product_features[0].images[0].image_url">
+                    <img class="w-full mb-4" :src="product['product_features'][0].images[0]['image_url']" alt="product.id">
                     <div class="flex justify-between">
                         <div class="text-sm font-mont">{{ product.name }}</div>
-                        <div class="text-sm font-mont">{{ product.product_features[0]["price"] }}</div>
+                        <div class="text-sm font-mont">{{ product['product_features'][0]["price"] }}</div>
                     </div>
 
                 </div>
@@ -83,38 +83,8 @@ export default {
         showProduct(product) {
             console.log(product.id)
             this.$inertia.get(this.route('products.show',product.id),{
-                onBefore: (visit) => {console.log('before')},
-                onStart: (visit) => {console.log('on start')},
-                onProgress: (progress) => {console.log('progress')},
-                onSuccess: (page) => {console.log('page')},
-                onError: (errors) => {console.log('errors')},
-                onCancel: () => {console.log('cancel')},
-                onFinish: visit => {console.log('visit')},
             })
         }
     }
 }
 </script>
-
-<style scoped>
-@media screen and (max-width: 639px) {
-    .mobileImgView {
-        background-color: blue;
-        width: 50%;
-    }
-}
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
