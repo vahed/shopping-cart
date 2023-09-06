@@ -1,3 +1,21 @@
+<script setup>
+import { ref, watch } from 'vue'
+
+let props = defineProps({
+    products: Object,
+    default: () => ({}),
+})
+
+let search = ref('')
+
+watch(search, value => {
+    this.$inertia.get(this.route('products.index',{search: value }),{
+        preserveState: true,
+        replace: true,
+    })
+})
+</script>
+
 <template>
     <div class="grid grid-cols-1 divide-y">
         <Navbar />
@@ -8,6 +26,7 @@
     <h2 class="text-4xl font-bold text-center text-gray-800 mb-8 mt-5">
         محصولات
     </h2>
+    <input type="text" name="search"/>
 
     <div class="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         <div v-for="product in products.data" :key="product.id">
@@ -16,7 +35,7 @@
                     <img class="w-full mb-4" :src="product.product_features[0].images[0].image_url">
                     <div class="flex justify-between">
                         <div class="text-sm font-mont">{{ product.name }}</div>
-                        <div class="text-sm font-mont">{{ formatCurrency(product.product_features[0]["price"]) }}</div>
+                        <div class="text-sm font-mont">{{ product.product_features[0]["price"] }}</div>
                     </div>
 
                 </div>
@@ -58,10 +77,10 @@ export default {
         message: Object
     },
     methods: {
-        formatCurrency(price) {
-            price = (price /100);
-            return price.toLocaleString('en-GB', { style: 'currency', currency: 'GBP'})
-        },
+        // formatCurrency(price) {
+        //     price = (price /100);
+        //     return price.toLocaleString('en-GB', { style: 'currency', currency: 'GBP'})
+        // },
         showProduct(product) {
             console.log(product.id)
             this.$inertia.get(this.route('products.show',product.id),{

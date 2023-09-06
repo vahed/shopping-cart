@@ -30,4 +30,9 @@ class UserController extends Controller
     {
         Order::where('');
     }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/login');
+    }
 }

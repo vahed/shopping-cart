@@ -28,7 +28,7 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $productRepository = new ProductRepository;
+       // $productRepository = new ProductRepository;
 
         $product = $this->productRepository->showProductById($id);
 

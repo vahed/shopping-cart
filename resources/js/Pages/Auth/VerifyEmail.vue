@@ -35,7 +35,7 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
                     ارسال دوباره ایمیل تایید
                 </PrimaryButton>
 
-                <Link :href="route('logout')" method="post" as="button" class="underline text-sm text-gray-600 hover:text-gray-900 text-right">خروج</Link>
+                <Link :href="route('logout')" method="get" as="button" class="underline text-sm text-gray-600 hover:text-gray-900 text-right">خروج</Link>
             </div>
         </form>
     </GuestLayout>

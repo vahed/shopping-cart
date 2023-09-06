@@ -31,12 +31,12 @@
                             <NavLink :href="route('admin_dashboard')">داشبورد</NavLink>
                         </div>
                         <div v-if="$page.props.auth.role === 'admin'">
-                            <NavLink :href="route('logout')" method="post" as="button">خروج</NavLink>
+                            <NavLink :href="route('logout')" method="get" as="button">خروج</NavLink>
                         </div>
                         <div v-if="$page.props.auth.user">
                             <NavLink v-if="$page.props.auth.user.role === 'user'" :active="$page.component === 'Auth/Login'" :href="route('logout')"
                                      class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-yellow-500 hover:text-white transition duration-300"
-                                     method="post"
+                                     method="get"
                                      as="button">
                                 خروج
                             </NavLink>
@@ -98,11 +98,11 @@
 
                     <li v-if="$page.props.auth.role === 'admin'">
                         <MobileNavLink :href="route('admin_dashboard')" method="get" as="button">داشبورد</MobileNavLink>
-                        <MobileNavLink :href="route('logout')" method="post" as="button">خروج</MobileNavLink>
+                        <MobileNavLink :href="route('logout')" method="get" as="button">خروج</MobileNavLink>
                     </li>
 
                     <li v-if="$page.props.auth.user">
-                        <MobileNavLink v-if="$page.props.auth.user.role === 'user'" :active="$page.component === 'Auth/Login'" :href="route('logout')" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-yellow-500 hover:text-white transition duration-300" method="post" as="button">
+                        <MobileNavLink v-if="$page.props.auth.user.role === 'user'" :active="$page.component === 'Auth/Login'" :href="route('logout')" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-yellow-500 hover:text-white transition duration-300" method="get" as="button">
                             خروج
                         </MobileNavLink>
                     </li>

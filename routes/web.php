@@ -105,4 +105,6 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
 require __DIR__.'/auth.php';

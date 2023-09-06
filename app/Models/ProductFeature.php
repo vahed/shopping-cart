@@ -7,12 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use AmrShawky\LaravelCurrency\Facade\Currency;
 
 class ProductFeature extends Model
 {
     use HasFactory;
 
     protected $fillable = ['product_id', 'price', 'quantity', 'color', 'size', 'description', 'discount', 'in_stock'];
+
+    /**
+     * Get the product's price and convert it into Rials.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getPriceAttribute($value)
+    {
+        return Currency::convert()
+            ->from('GBP')
+            ->to('IRR')
+            ->amount($value)
+            ->throw()
+            ->get();
+    }
 
     public function products():belongsTo
     {

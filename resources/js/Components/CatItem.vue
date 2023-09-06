@@ -1,6 +1,6 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue'
-import { ChevronDownIcon } from "@heroicons/vue/20/solid"
+import { ChevronDownIcon } from "@heroicons/vue/20/solid/index"
 import { computed } from "vue"
 
 const props =defineProps({
